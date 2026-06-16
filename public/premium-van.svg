@@ -1,0 +1,66 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Elegancki van premium na tle nocnego Krakowa">
+  <rect width="1200" height="780" rx="0" fill="#071936"/>
+  <path d="M0 0H1200V780H0V0Z" fill="url(#sky)"/>
+  <path d="M0 525C145 486 280 472 405 483C540 495 633 545 760 545C899 545 1018 492 1200 474V780H0V525Z" fill="#0B213F"/>
+  <path d="M0 588C161 551 300 544 415 566C528 588 601 635 745 631C899 626 1022 561 1200 544V780H0V588Z" fill="#101820"/>
+  <g opacity="0.42">
+    <rect x="108" y="230" width="78" height="294" rx="4" fill="#172841"/>
+    <rect x="128" y="257" width="16" height="42" fill="#C8A45D"/>
+    <rect x="154" y="257" width="16" height="42" fill="#F6F0E4"/>
+    <rect x="128" y="318" width="16" height="42" fill="#F6F0E4"/>
+    <rect x="154" y="318" width="16" height="42" fill="#C8A45D"/>
+    <rect x="128" y="379" width="16" height="42" fill="#C8A45D"/>
+    <rect x="154" y="379" width="16" height="42" fill="#F6F0E4"/>
+    <rect x="980" y="190" width="96" height="351" rx="4" fill="#16263E"/>
+    <rect x="1004" y="224" width="18" height="48" fill="#F6F0E4"/>
+    <rect x="1034" y="224" width="18" height="48" fill="#C8A45D"/>
+    <rect x="1004" y="294" width="18" height="48" fill="#C8A45D"/>
+    <rect x="1034" y="294" width="18" height="48" fill="#F6F0E4"/>
+    <rect x="1004" y="364" width="18" height="48" fill="#F6F0E4"/>
+    <rect x="1034" y="364" width="18" height="48" fill="#C8A45D"/>
+  </g>
+  <path d="M172 620H1015" stroke="#C8A45D" stroke-width="3" stroke-linecap="round" opacity="0.62"/>
+  <path d="M238 570C250 516 294 478 356 478H706C769 478 821 514 846 570L876 638H207L238 570Z" fill="url(#body)"/>
+  <path d="M344 498H686C736 498 778 526 799 570H268C283 526 313 498 344 498Z" fill="#101820"/>
+  <path d="M365 515H493V568H294C306 537 330 515 365 515Z" fill="url(#glass)"/>
+  <path d="M515 515H676C711 515 743 535 762 568H515V515Z" fill="url(#glass)"/>
+  <path d="M225 592H864L882 638H206L225 592Z" fill="#E8EEF7"/>
+  <path d="M716 600H832C846 600 858 610 861 624H705C707 610 710 600 716 600Z" fill="#C8A45D"/>
+  <path d="M239 602H331C338 602 344 607 347 614H224C227 607 232 602 239 602Z" fill="#F6F0E4"/>
+  <circle cx="329" cy="640" r="55" fill="#101820"/>
+  <circle cx="329" cy="640" r="28" fill="#C8A45D"/>
+  <circle cx="329" cy="640" r="13" fill="#F6F0E4"/>
+  <circle cx="748" cy="640" r="55" fill="#101820"/>
+  <circle cx="748" cy="640" r="28" fill="#C8A45D"/>
+  <circle cx="748" cy="640" r="13" fill="#F6F0E4"/>
+  <path d="M155 669H1010" stroke="url(#road)" stroke-width="20" stroke-linecap="round"/>
+  <path d="M650 655C783 652 929 643 1088 626" stroke="#F6F0E4" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+  <path d="M140 90H468" stroke="#C8A45D" stroke-width="2" opacity="0.38"/>
+  <path d="M732 126H1048" stroke="#F6F0E4" stroke-width="2" opacity="0.24"/>
+  <circle cx="610" cy="176" r="72" fill="url(#moon)" opacity="0.7"/>
+  <defs>
+    <linearGradient id="sky" x1="600" y1="0" x2="600" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071936"/>
+      <stop offset="0.55" stop-color="#0D203B"/>
+      <stop offset="1" stop-color="#121820"/>
+    </linearGradient>
+    <linearGradient id="body" x1="226" y1="490" x2="865" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.45" stop-color="#E9EEF4"/>
+      <stop offset="1" stop-color="#BFC8D6"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="294" y1="515" x2="762" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F0E4"/>
+      <stop offset="1" stop-color="#7891B0"/>
+    </linearGradient>
+    <linearGradient id="road" x1="155" y1="669" x2="1010" y2="669" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8A45D" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#C8A45D"/>
+      <stop offset="1" stop-color="#C8A45D" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(610 176) rotate(90) scale(72)">
+      <stop stop-color="#F6F0E4"/>
+      <stop offset="1" stop-color="#C8A45D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
