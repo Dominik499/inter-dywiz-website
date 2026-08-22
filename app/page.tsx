@@ -1,8 +1,8 @@
 import ContactForm from "../components/contact-form";
 
-const phoneDisplay = "+48 000 000 000";
-const phoneHref = "tel:+48000000000";
-const whatsappHref = "https://wa.me/48000000000";
+const phoneDisplay = "+48 574 505 323";
+const phoneHref = "tel:+48574505323";
+const whatsappHref = "https://wa.me/48574505323";
 const email = "kontakt@inter-dywiz.pl";
 
 const services = [
