@@ -1,3 +1,5 @@
+import ContactForm from "../components/contact-form";
+
 const phoneDisplay = "+48 000 000 000";
 const phoneHref = "tel:+48000000000";
 const whatsappHref = "https://wa.me/48000000000";
@@ -275,59 +277,7 @@ export default function Home() {
             </div>
           </div>
 
-          <form className="rounded-sm border border-navy/10 bg-champagne p-5 shadow-soft sm:p-8">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-bold text-navy">Imię i nazwisko</span>
-                <input
-                  className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
-                  type="text"
-                  name="name"
-                  autoComplete="name"
-                />
-              </label>
-              <label className="block">
-                <span className="text-sm font-bold text-navy">Telefon lub e-mail</span>
-                <input
-                  className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
-                  type="text"
-                  name="contact"
-                  autoComplete="email"
-                />
-              </label>
-            </div>
-            <label className="mt-5 block">
-              <span className="text-sm font-bold text-navy">Typ zlecenia</span>
-              <select
-                className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
-                name="service"
-                defaultValue="Transfer lotniskowy"
-              >
-                <option>Transfer lotniskowy</option>
-                <option>Transport biznesowy</option>
-                <option>Van 7+1 lub 8+1</option>
-                <option>Kierowca do dyspozycji</option>
-                <option>Stała współpraca</option>
-              </select>
-            </label>
-            <label className="mt-5 block">
-              <span className="text-sm font-bold text-navy">Wiadomość</span>
-              <textarea
-                className="mt-2 min-h-36 w-full resize-y rounded-sm border border-navy/[0.12] bg-white px-4 py-3 text-navy outline-none transition focus:border-gold"
-                name="message"
-              />
-            </label>
-            <button
-              type="submit"
-              className="mt-6 inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-sm bg-navy px-6 text-base font-extrabold text-white shadow-soft transition hover:bg-graphite sm:w-auto"
-            >
-              Wyślij zapytanie <ArrowIcon />
-            </button>
-            <p className="mt-4 text-xs leading-5 text-graphite/[0.64]">
-              Formularz jest gotowy do podłączenia do wybranego backendu, CRM lub narzędzia
-              mailingowego.
-            </p>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </main>
