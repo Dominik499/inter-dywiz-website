@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Polityka prywatności | Inter-Dywiz Sp. z o.o.",
-  description: "Informacje o przetwarzaniu danych osobowych przez Inter-Dywiz Sp. z o.o."
+  description: "Informacje o przetwarzaniu danych osobowych przez Inter-Dywiz Sp. z o.o.",
+  alternates: {
+    canonical: "/polityka-prywatnosci"
+  }
 };
 
 export default function PrivacyPolicyPage() {
