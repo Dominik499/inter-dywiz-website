@@ -27,9 +27,19 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-black text-navy">1. Administrator danych</h2>
             <p className="mt-2">
-              Administratorem danych osobowych jest Inter-Dywiz Sp. z o.o. Dane rejestrowe,
-              adres siedziby oraz dane kontaktowe administratora powinny zostać uzupełnione przed
-              uruchomieniem formularza w środowisku produkcyjnym.
+              Administratorem danych osobowych jest INTER-DYWIZ Sp. z o.o.
+              <br />
+              ul. Bulwarowa 13A/2
+              <br />
+              31-751 Kraków
+              <br />
+              NIP: 6751496482
+              <br />
+              REGON: 123040168
+              <br />
+              KRS: 0000496661
+              <br />
+              e-mail: biuro@inter-dywiz.pl
             </p>
           </section>
 
@@ -49,12 +59,18 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-black text-navy">3. Podstawa prawna i okres przechowywania</h2>
             <p className="mt-2">
-              Po uruchomieniu obsługi formularza podstawą przetwarzania będzie art. 6 ust. 1 lit.
-              b RODO, jeżeli zapytanie prowadzi do zawarcia umowy, albo art. 6 ust. 1 lit. f RODO
-              — prawnie uzasadniony interes administratora polegający na obsłudze zapytań. Dane
-              będą przechowywane nie dłużej, niż jest to konieczne do obsługi zapytania oraz
-              ewentualnego dochodzenia lub obrony roszczeń. Administrator powinien uzupełnić ten
-              zapis o konkretny okres retencji przed publikacją strony produkcyjnej.
+              Podstawą przetwarzania danych jest art. 6 ust. 1 lit. b RODO, jeżeli zapytanie
+              prowadzi do podjęcia działań przed zawarciem umowy lub do zawarcia umowy, albo art. 6
+              ust. 1 lit. f RODO — prawnie uzasadniony interes administratora polegający na obsłudze
+              zapytań i prowadzeniu korespondencji.
+            </p>
+            <p className="mt-2">
+              Dane przekazane w związku z zapytaniem za pośrednictwem formularza kontaktowego będą
+              przechowywane przez okres niezbędny do obsługi zapytania i prowadzenia związanej z
+              nim korespondencji, a następnie nie dłużej niż przez 12 miesięcy od zakończenia
+              korespondencji. Jeżeli kontakt doprowadzi do zawarcia umowy, dane mogą być
+              przechowywane przez okres wymagany przepisami prawa oraz do czasu upływu terminów
+              przedawnienia ewentualnych roszczeń.
             </p>
           </section>
 
