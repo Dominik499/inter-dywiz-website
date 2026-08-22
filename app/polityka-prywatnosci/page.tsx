@@ -81,8 +81,8 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-black text-navy">6. Kontakt</h2>
             <p className="mt-2">
               W sprawach dotyczących prywatności skontaktuj się pod adresem{' '}
-              <a className="font-bold text-navy underline hover:text-gold" href="mailto:kontakt@inter-dywiz.pl">
-                kontakt@inter-dywiz.pl
+              <a className="font-bold text-navy underline hover:text-gold" href="mailto:biuro@inter-dywiz.pl">
+                biuro@inter-dywiz.pl
               </a>.
             </p>
           </section>
