@@ -280,6 +280,51 @@ export default function Home() {
           <ContactForm />
         </div>
       </section>
+
+      <footer className="border-t border-white/10 bg-navy px-5 py-12 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-gold">
+              INTER-DYWIZ Sp. z o.o.
+            </p>
+            <address className="mt-4 text-sm not-italic leading-7 text-white/70">
+              ul. Bulwarowa 13A/2
+              <br />
+              31-751 Kraków
+            </address>
+          </div>
+
+          <div className="text-sm leading-7 text-white/70">
+            <p>NIP: 6751496482</p>
+            <p>REGON: 123040168</p>
+            <p>KRS: 0000496661</p>
+          </div>
+
+          <div className="space-y-3 text-sm sm:col-span-2 lg:col-span-1">
+            <p>
+              <span className="block text-white/60">Telefon</span>
+              <a className="font-bold text-white transition hover:text-gold" href={phoneHref}>
+                {phoneDisplay}
+              </a>
+            </p>
+            <p>
+              <span className="block text-white/60">E-mail</span>
+              <a
+                className="font-bold text-white transition hover:text-gold"
+                href={`mailto:${email}`}
+              >
+                {email}
+              </a>
+            </p>
+            <a
+              className="inline-block font-bold text-gold underline decoration-gold/40 underline-offset-4 transition hover:text-champagne"
+              href="/polityka-prywatnosci"
+            >
+              Polityka prywatności
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
