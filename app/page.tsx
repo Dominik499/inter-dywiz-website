@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ContactForm from "../components/contact-form";
 
 const phoneDisplay = "+48 574 505 323";
@@ -158,9 +159,13 @@ export default function Home() {
 
           <div className="relative">
             <div className="overflow-hidden rounded-sm border border-white/[0.12] bg-white/[0.08] shadow-soft">
-              <img
-                src="/premium-van.svg"
-                alt="Elegancki van premium na tle nocnego Krakowa"
+              <Image
+                src="/images/mercedes-e-class-hero.webp"
+                alt="Srebrny samochód klasy biznesowej"
+                width={1800}
+                height={1200}
+                priority
+                sizes="(min-width: 1280px) 576px, (min-width: 1024px) 46vw, calc(100vw - 40px)"
                 className="aspect-[1.42] h-full w-full object-cover"
               />
             </div>
@@ -197,6 +202,28 @@ export default function Home() {
                 <p className="mt-4 text-sm leading-7 text-graphite/[0.78]">{service.description}</p>
               </article>
             ))}
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className="overflow-hidden rounded-sm border border-navy/10 bg-navy shadow-soft">
+              <Image
+                src="/images/mercedes-v-class-exterior.webp"
+                alt="Czarny van klasy premium do transferów grupowych"
+                width={1800}
+                height={1200}
+                sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, calc(100vw - 40px)"
+                className="aspect-[16/10] h-full w-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-sm border border-navy/10 bg-navy shadow-soft">
+              <Image
+                src="/images/mercedes-v-class-interior.webp"
+                alt="Wnętrze vana klasy premium"
+                width={1800}
+                height={1200}
+                sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, calc(100vw - 40px)"
+                className="aspect-[16/10] h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -239,6 +266,16 @@ export default function Home() {
             </h2>
           </div>
           <div className="space-y-6 text-base leading-8 text-white/[0.76]">
+            <div className="overflow-hidden rounded-sm border border-white/[0.12] bg-white/[0.08] shadow-soft">
+              <Image
+                src="/images/volkswagen-passat-business.webp"
+                alt="Srebrny samochód klasy biznesowej"
+                width={1200}
+                height={1800}
+                sizes="(min-width: 1280px) 672px, (min-width: 1024px) 53vw, calc(100vw - 40px)"
+                className="aspect-[16/9] h-full w-full object-cover object-[center_62%]"
+              />
+            </div>
             <p>
               Ustalamy sposób zgłaszania przejazdów, osobę kontaktową i zasady rozliczeń.
               Koordynujemy pojedyncze zlecenia oraz większe harmonogramy transferów.
