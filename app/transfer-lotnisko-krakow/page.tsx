@@ -7,6 +7,18 @@ export const metadata: Metadata = {
     "Transfer z lotniska Kraków-Balice z monitoringiem lotu, odbiorem z tabliczką i pojazdem dobranym do liczby pasażerów oraz bagażu.",
   alternates: {
     canonical: "/transfer-lotnisko-krakow"
+  },
+  openGraph: {
+    title: "Transfer lotniskowy Kraków-Balice | Inter-Dywiz",
+    description:
+      "Transfer z lotniska Kraków-Balice z monitoringiem lotu, odbiorem z tabliczką i pojazdem dobranym do liczby pasażerów oraz bagażu.",
+    url: "https://www.inter-dywiz.pl/transfer-lotnisko-krakow"
+  },
+  twitter: {
+    card: "summary",
+    title: "Transfer lotniskowy Kraków-Balice | Inter-Dywiz",
+    description:
+      "Transfer z lotniska Kraków-Balice z monitoringiem lotu, odbiorem z tabliczką i pojazdem dobranym do liczby pasażerów oraz bagażu."
   }
 };
 
@@ -14,6 +26,7 @@ export default function AirportTransferPage() {
   return (
     <ServiceLandingPage
       currentPath="/transfer-lotnisko-krakow"
+      serviceParam="airport"
       eyebrow="Transfery lotniskowe"
       title="Transfer lotniskowy Kraków-Balice"
       intro="Koordynujemy odbiór z godziną przylotu, monitorujemy lot i dobieramy pojazd do liczby pasażerów oraz bagażu."

@@ -4,6 +4,7 @@ import {
   contactFormSchema,
   getEmailContact,
   getFieldErrors,
+  isB2BService,
   type ContactFormInput
 } from "../../../lib/contact-schema";
 import { limitRequest } from "../../../lib/rate-limit";
@@ -61,19 +62,36 @@ function createEmailText({
   pickupLocation,
   destination,
   passengerCount,
+  companyName,
+  monthlyTrips,
+  operatingArea,
   message
 }: ContactFormInput) {
-  return [
+  const contactDetails = [
     "Nowe zapytanie z formularza kontaktowego Inter-Dywiz.",
     "",
     `Imię i nazwisko: ${name}`,
     `Telefon lub e-mail: ${contact}`,
     `Typ zlecenia: ${service}`,
-    `Data przejazdu: ${travelDate}`,
-    `Orientacyjna godzina: ${travelTime || "Nie podano"}`,
-    `Miejsce odbioru: ${pickupLocation}`,
-    `Miejsce docelowe: ${destination}`,
-    `Liczba pasażerów: ${passengerCount}`,
+    ""
+  ];
+  const serviceDetails = isB2BService(service)
+    ? [
+        `Nazwa firmy / hotelu / biura podróży: ${companyName || "Nie podano"}`,
+        `Przewidywana liczba przejazdów miesięcznie: ${monthlyTrips || "Nie podano"}`,
+        `Obszar działania / typowe trasy: ${operatingArea || "Nie podano"}`
+      ]
+    : [
+        `Data przejazdu: ${travelDate}`,
+        `Orientacyjna godzina: ${travelTime || "Nie podano"}`,
+        `Miejsce odbioru: ${pickupLocation}`,
+        `Miejsce docelowe: ${destination}`,
+        `Liczba pasażerów: ${passengerCount}`
+      ];
+
+  return [
+    ...contactDetails,
+    ...serviceDetails,
     "",
     "Dodatkowe informacje:",
     message || "Nie podano"

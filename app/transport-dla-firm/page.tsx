@@ -7,6 +7,18 @@ export const metadata: Metadata = {
     "Stała obsługa transportowa firm, hoteli, biur podróży i wydarzeń w Krakowie: jeden kontakt, harmonogramy i zbiorcze rozliczenia.",
   alternates: {
     canonical: "/transport-dla-firm"
+  },
+  openGraph: {
+    title: "Transport dla firm Kraków | Inter-Dywiz",
+    description:
+      "Stała obsługa transportowa firm, hoteli, biur podróży i wydarzeń w Krakowie: jeden kontakt, harmonogramy i zbiorcze rozliczenia.",
+    url: "https://www.inter-dywiz.pl/transport-dla-firm"
+  },
+  twitter: {
+    card: "summary",
+    title: "Transport dla firm Kraków | Inter-Dywiz",
+    description:
+      "Stała obsługa transportowa firm, hoteli, biur podróży i wydarzeń w Krakowie: jeden kontakt, harmonogramy i zbiorcze rozliczenia."
   }
 };
 
@@ -14,6 +26,7 @@ export default function TransportForCompaniesPage() {
   return (
     <ServiceLandingPage
       currentPath="/transport-dla-firm"
+      serviceParam="b2b"
       eyebrow="Współpraca B2B"
       title="Transport dla firm w Krakowie"
       intro="Stała lub okazjonalna obsługa transportowa dla firm, hoteli, biur podróży i organizatorów wydarzeń — z jednym kontaktem operacyjnym."

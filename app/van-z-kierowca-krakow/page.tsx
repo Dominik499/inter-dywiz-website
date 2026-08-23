@@ -7,6 +7,18 @@ export const metadata: Metadata = {
     "Vany 7+1 i 8+1 z kierowcą w Krakowie dla grup, rodzin, zespołów, gości hotelowych oraz transferów lotniskowych i biznesowych.",
   alternates: {
     canonical: "/van-z-kierowca-krakow"
+  },
+  openGraph: {
+    title: "Van z kierowcą Kraków | Inter-Dywiz",
+    description:
+      "Vany 7+1 i 8+1 z kierowcą w Krakowie dla grup, rodzin, zespołów, gości hotelowych oraz transferów lotniskowych i biznesowych.",
+    url: "https://www.inter-dywiz.pl/van-z-kierowca-krakow"
+  },
+  twitter: {
+    card: "summary",
+    title: "Van z kierowcą Kraków | Inter-Dywiz",
+    description:
+      "Vany 7+1 i 8+1 z kierowcą w Krakowie dla grup, rodzin, zespołów, gości hotelowych oraz transferów lotniskowych i biznesowych."
   }
 };
 
@@ -14,6 +26,7 @@ export default function VanWithDriverPage() {
   return (
     <ServiceLandingPage
       currentPath="/van-z-kierowca-krakow"
+      serviceParam="van"
       eyebrow="Transport grupowy"
       title="Van z kierowcą w Krakowie"
       intro="Vany 7+1 i 8+1 dla grup, rodzin, zespołów i gości hotelowych — na transfer lotniskowy, wydarzenie lub przejazd biznesowy."

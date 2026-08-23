@@ -7,6 +7,7 @@ type ServiceLink = {
 
 type ServiceLandingPageProps = {
   currentPath: string;
+  serviceParam: "airport" | "business" | "van" | "b2b";
   eyebrow: string;
   title: string;
   intro: string;
@@ -55,6 +56,7 @@ function ArrowIcon() {
 
 export default function ServiceLandingPage({
   currentPath,
+  serviceParam,
   eyebrow,
   title,
   intro,
@@ -67,6 +69,7 @@ export default function ServiceLandingPage({
   faq
 }: ServiceLandingPageProps) {
   const otherServices = serviceLinks.filter((service) => service.href !== currentPath);
+  const contactHref = `/?service=${serviceParam}#kontakt`;
 
   return (
     <main className="overflow-hidden bg-white text-graphite">
@@ -79,7 +82,7 @@ export default function ServiceLandingPage({
             <span className="text-sm font-bold uppercase tracking-[0.18em]">Inter-Dywiz</span>
           </a>
           <a
-            href="/#kontakt"
+            href={contactHref}
             className="inline-flex h-11 items-center justify-center rounded-sm bg-gold px-4 text-sm font-bold text-navy shadow-gold transition hover:bg-champagne"
           >
             Zapytaj o wycenę
@@ -101,12 +104,26 @@ export default function ServiceLandingPage({
               {title}
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/[0.78]">{intro}</p>
-            <a
-              href="/#kontakt"
-              className="mt-8 inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-gold px-6 text-base font-extrabold text-navy shadow-gold transition hover:bg-champagne"
-            >
-              {ctaLabel} <ArrowIcon />
-            </a>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={contactHref}
+                className="inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-gold px-6 text-base font-extrabold text-navy shadow-gold transition hover:bg-champagne"
+              >
+                {ctaLabel} <ArrowIcon />
+              </a>
+              <a
+                href="tel:+48574505323"
+                className="inline-flex h-[52px] items-center justify-center rounded-sm border border-white/[0.18] bg-white/[0.08] px-5 font-bold text-white transition hover:border-gold hover:text-gold"
+              >
+                Zadzwoń: +48 574 505 323
+              </a>
+              <a
+                href="https://wa.me/48574505323"
+                className="inline-flex h-[52px] items-center justify-center rounded-sm border border-white/[0.18] px-5 font-bold text-white transition hover:border-gold hover:text-gold"
+              >
+                WhatsApp
+              </a>
+            </div>
           </div>
           <div className="overflow-hidden rounded-sm border border-white/[0.12] bg-white/[0.08] shadow-soft">
             <Image
@@ -216,7 +233,7 @@ export default function ServiceLandingPage({
               </p>
             </div>
             <a
-              href="/#kontakt"
+              href={contactHref}
               className="mt-6 inline-flex h-[52px] shrink-0 items-center justify-center gap-2 rounded-sm bg-gold px-6 font-extrabold text-navy transition hover:bg-champagne sm:mt-0"
             >
               {ctaLabel} <ArrowIcon />

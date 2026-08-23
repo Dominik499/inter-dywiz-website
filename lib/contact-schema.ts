@@ -8,6 +8,17 @@ export const contactServiceOptions = [
   "Stała współpraca"
 ] as const;
 
+export const serviceQueryMap = {
+  airport: "Transfer lotniskowy",
+  business: "Transport biznesowy",
+  van: "Van 7+1 lub 8+1",
+  b2b: "Stała współpraca"
+} as const satisfies Record<string, (typeof contactServiceOptions)[number]>;
+
+export function isB2BService(service: (typeof contactServiceOptions)[number]) {
+  return service === "Stała współpraca";
+}
+
 const phonePattern = /^\+?[0-9 ()-]{7,25}$/;
 
 export function getEmailContact(value: string) {
@@ -52,34 +63,25 @@ export const contactFormSchema = z.object({
     .max(254, "Dane kontaktowe mogą mieć maksymalnie 254 znaki.")
     .refine(isEmailOrPhone, "Podaj poprawny adres e-mail lub numer telefonu."),
   service: z.enum(contactServiceOptions),
-  travelDate: z
-    .string()
-    .trim()
-    .refine(isValidIsoDate, "Podaj poprawną datę przejazdu."),
+  travelDate: z.string().trim(),
   travelTime: z
     .string()
     .trim()
     .refine((value) => value === "" || /^([01]\d|2[0-3]):[0-5]\d$/.test(value), {
       message: "Podaj poprawną godzinę przejazdu."
     }),
-  pickupLocation: z
+  pickupLocation: z.string().trim().max(200, "Miejsce odbioru może mieć maksymalnie 200 znaków."),
+  destination: z.string().trim().max(200, "Miejsce docelowe może mieć maksymalnie 200 znaków."),
+  passengerCount: z.string().trim(),
+  companyName: z.string().trim().max(150, "Nazwa firmy może mieć maksymalnie 150 znaków."),
+  monthlyTrips: z
     .string()
     .trim()
-    .min(2, "Podaj miejsce odbioru.")
-    .max(200, "Miejsce odbioru może mieć maksymalnie 200 znaków."),
-  destination: z
+    .max(100, "Przewidywana liczba przejazdów może mieć maksymalnie 100 znaków."),
+  operatingArea: z
     .string()
     .trim()
-    .min(2, "Podaj miejsce docelowe.")
-    .max(200, "Miejsce docelowe może mieć maksymalnie 200 znaków."),
-  passengerCount: z
-    .string()
-    .trim()
-    .regex(/^\d+$/, "Podaj liczbę pasażerów.")
-    .refine((value) => {
-      const count = Number(value);
-      return count >= 1 && count <= 200;
-    }, "Liczba pasażerów musi wynosić od 1 do 200."),
+    .max(300, "Obszar działania lub typowe trasy mogą mieć maksymalnie 300 znaków."),
   message: z.string().trim().max(2000, "Dodatkowe informacje mogą mieć maksymalnie 2000 znaków."),
   privacyAccepted: z.literal(true, {
     error: "Akceptacja polityki prywatności jest wymagana."
@@ -93,6 +95,39 @@ export const contactFormSchema = z.object({
       (value) => Date.now() - value >= 1500 && Date.now() - value < 24 * 60 * 60 * 1000,
       "Formularz został wysłany zbyt szybko. Spróbuj ponownie za chwilę."
     )
+}).superRefine((data, context) => {
+  if (isB2BService(data.service)) {
+    return;
+  }
+
+  if (!isValidIsoDate(data.travelDate)) {
+    context.addIssue({
+      code: "custom",
+      path: ["travelDate"],
+      message: "Podaj poprawną datę przejazdu."
+    });
+  }
+
+  if (data.pickupLocation.length < 2) {
+    context.addIssue({ code: "custom", path: ["pickupLocation"], message: "Podaj miejsce odbioru." });
+  }
+
+  if (data.destination.length < 2) {
+    context.addIssue({ code: "custom", path: ["destination"], message: "Podaj miejsce docelowe." });
+  }
+
+  if (!/^\d+$/.test(data.passengerCount)) {
+    context.addIssue({ code: "custom", path: ["passengerCount"], message: "Podaj liczbę pasażerów." });
+  } else {
+    const count = Number(data.passengerCount);
+    if (count < 1 || count > 200) {
+      context.addIssue({
+        code: "custom",
+        path: ["passengerCount"],
+        message: "Liczba pasażerów musi wynosić od 1 do 200."
+      });
+    }
+  }
 });
 
 export type ContactFormInput = z.infer<typeof contactFormSchema>;

@@ -7,6 +7,18 @@ export const metadata: Metadata = {
     "Transport biznesowy w Krakowie i Małopolsce: spotkania, konferencje, delegacje, goście VIP i kierowca do dyspozycji.",
   alternates: {
     canonical: "/transport-biznesowy-krakow"
+  },
+  openGraph: {
+    title: "Transport biznesowy Kraków | Inter-Dywiz",
+    description:
+      "Transport biznesowy w Krakowie i Małopolsce: spotkania, konferencje, delegacje, goście VIP i kierowca do dyspozycji.",
+    url: "https://www.inter-dywiz.pl/transport-biznesowy-krakow"
+  },
+  twitter: {
+    card: "summary",
+    title: "Transport biznesowy Kraków | Inter-Dywiz",
+    description:
+      "Transport biznesowy w Krakowie i Małopolsce: spotkania, konferencje, delegacje, goście VIP i kierowca do dyspozycji."
   }
 };
 
@@ -14,6 +26,7 @@ export default function BusinessTransportPage() {
   return (
     <ServiceLandingPage
       currentPath="/transport-biznesowy-krakow"
+      serviceParam="business"
       eyebrow="Obsługa biznesowa"
       title="Transport biznesowy w Krakowie"
       intro="Planujemy przejazdy na spotkania, konferencje i delegacje oraz transport gości biznesowych i VIP w Krakowie i Małopolsce."

@@ -303,7 +303,7 @@ export default function Home() {
               zlecenia cykliczne z jednym kontaktem operacyjnym.
             </p>
             <a
-              href="#kontakt"
+              href="/?service=b2b#kontakt"
               className="inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-gold px-6 text-base font-extrabold text-navy shadow-gold transition hover:bg-champagne"
             >
               Zapytaj o stałą współpracę <ArrowIcon />
@@ -320,9 +320,26 @@ export default function Home() {
               Otrzymaj wycenę przejazdu lub zapytaj o stałą współpracę
             </h2>
             <p className="mt-5 text-base leading-8 text-graphite/[0.78]">
-              Podaj trasę, termin i liczbę pasażerów. Wrócimy z informacją o dostępności oraz
-              wyceną.
+              Dla konkretnego przejazdu podaj trasę, termin i liczbę pasażerów. Jeśli pytasz o
+              stałą współpracę, wystarczą dane kontaktowe i krótki opis potrzeb.
             </p>
+            <div className="mt-8">
+              <h3 className="text-xl font-black text-navy">Co dzieje się po wysłaniu zapytania?</h3>
+              <ol className="mt-4 space-y-3">
+                {[
+                  "Sprawdzamy dostępność",
+                  "Dobieramy odpowiedni pojazd i sposób realizacji",
+                  "Wracamy z wyceną i szczegółami przejazdu"
+                ].map((step, index) => (
+                  <li key={step} className="flex items-start gap-3 text-sm leading-6 text-graphite/[0.78]">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-sm bg-navy text-xs font-black text-gold">
+                      {index + 1}
+                    </span>
+                    <span className="pt-0.5 font-semibold">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
             <div className="mt-8 space-y-4">
               <a
                 href={phoneHref}

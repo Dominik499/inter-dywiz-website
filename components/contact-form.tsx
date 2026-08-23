@@ -1,10 +1,12 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import {
   contactFormSchema,
   contactServiceOptions,
   getFieldErrors,
+  isB2BService,
+  serviceQueryMap,
   type ContactFormField
 } from "../lib/contact-schema";
 
@@ -18,6 +20,9 @@ type EditableFormData = {
   pickupLocation: string;
   destination: string;
   passengerCount: string;
+  companyName: string;
+  monthlyTrips: string;
+  operatingArea: string;
   message: string;
   privacyAccepted: boolean;
 };
@@ -32,6 +37,9 @@ const initialFormData: EditableFormData = {
   pickupLocation: "",
   destination: "",
   passengerCount: "",
+  companyName: "",
+  monthlyTrips: "",
+  operatingArea: "",
   message: "",
   privacyAccepted: false
 };
@@ -61,6 +69,18 @@ export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
   const startedAtRef = useRef(Date.now());
+  const isB2B = isB2BService(formData.service);
+
+  useEffect(() => {
+    const serviceParam = new URLSearchParams(window.location.search).get("service");
+    const selectedService = serviceParam && Object.hasOwn(serviceQueryMap, serviceParam)
+      ? serviceQueryMap[serviceParam as keyof typeof serviceQueryMap]
+      : undefined;
+
+    if (selectedService) {
+      setFormData((currentData) => ({ ...currentData, service: selectedService }));
+    }
+  }, []);
 
   function clearFieldError(field: ContactFormField) {
     setFieldErrors((currentErrors) => {
@@ -80,6 +100,27 @@ export default function ContactForm() {
   ) {
     setFormData((currentData) => ({ ...currentData, [field]: value }));
     clearFieldError(field);
+    if (status !== "idle") {
+      setStatus("idle");
+      setMessage("");
+    }
+  }
+
+  function updateService(service: EditableFormData["service"]) {
+    setFormData((currentData) => ({
+      ...currentData,
+      service,
+      ...(isB2BService(service)
+        ? {
+            travelDate: "",
+            travelTime: "",
+            pickupLocation: "",
+            destination: "",
+            passengerCount: ""
+          }
+        : { companyName: "", monthlyTrips: "", operatingArea: "" })
+    }));
+    setFieldErrors({});
     if (status !== "idle") {
       setStatus("idle");
       setMessage("");
@@ -195,7 +236,7 @@ export default function ContactForm() {
           className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
           name="service"
           value={formData.service}
-          onChange={(event) => updateField("service", event.target.value as EditableFormData["service"])}
+          onChange={(event) => updateService(event.target.value as EditableFormData["service"])}
           disabled={isSubmitting}
           aria-invalid={Boolean(fieldErrors.service)}
           aria-describedby={fieldErrors.service ? "service-error" : undefined}
@@ -207,6 +248,65 @@ export default function ContactForm() {
         <FieldError id="service-error" errors={fieldErrors.service} />
       </label>
 
+      {isB2B ? (
+        <div className="mt-5 space-y-5">
+          <label className="block">
+            <span className="text-sm font-bold text-navy">
+              Nazwa firmy / hotelu / biura podróży (opcjonalnie)
+            </span>
+            <input
+              className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+              type="text"
+              name="companyName"
+              autoComplete="organization"
+              value={formData.companyName}
+              onChange={(event) => updateField("companyName", event.target.value)}
+              maxLength={150}
+              disabled={isSubmitting}
+              aria-invalid={Boolean(fieldErrors.companyName)}
+              aria-describedby={fieldErrors.companyName ? "companyName-error" : undefined}
+            />
+            <FieldError id="companyName-error" errors={fieldErrors.companyName} />
+          </label>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <label className="block">
+              <span className="text-sm font-bold text-navy">
+                Przewidywana liczba przejazdów miesięcznie (opcjonalnie)
+              </span>
+              <input
+                className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+                type="text"
+                name="monthlyTrips"
+                value={formData.monthlyTrips}
+                onChange={(event) => updateField("monthlyTrips", event.target.value)}
+                maxLength={100}
+                disabled={isSubmitting}
+                aria-invalid={Boolean(fieldErrors.monthlyTrips)}
+                aria-describedby={fieldErrors.monthlyTrips ? "monthlyTrips-error" : undefined}
+              />
+              <FieldError id="monthlyTrips-error" errors={fieldErrors.monthlyTrips} />
+            </label>
+            <label className="block">
+              <span className="text-sm font-bold text-navy">
+                Obszar działania / typowe trasy (opcjonalnie)
+              </span>
+              <input
+                className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+                type="text"
+                name="operatingArea"
+                value={formData.operatingArea}
+                onChange={(event) => updateField("operatingArea", event.target.value)}
+                maxLength={300}
+                disabled={isSubmitting}
+                aria-invalid={Boolean(fieldErrors.operatingArea)}
+                aria-describedby={fieldErrors.operatingArea ? "operatingArea-error" : undefined}
+              />
+              <FieldError id="operatingArea-error" errors={fieldErrors.operatingArea} />
+            </label>
+          </div>
+        </div>
+      ) : (
+        <>
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
         <label className="block">
           <span className="text-sm font-bold text-navy">Data przejazdu</span>
@@ -296,6 +396,8 @@ export default function ContactForm() {
         />
         <FieldError id="passengerCount-error" errors={fieldErrors.passengerCount} />
       </label>
+        </>
+      )}
 
       <label className="mt-5 block">
         <span className="text-sm font-bold text-navy">Dodatkowe informacje (opcjonalnie)</span>
@@ -338,7 +440,16 @@ export default function ContactForm() {
           aria-describedby={fieldErrors.privacyAccepted ? "privacyAccepted-error" : undefined}
         />
         <span>
-          Zapoznałem/-am się z <a className="font-bold text-navy underline hover:text-gold" href="/polityka-prywatnosci">polityką prywatności</a> i przyjmuję do wiadomości zasady przetwarzania danych w celu obsługi zapytania.
+          Zapoznałem/-am się z{" "}
+          <a
+            className="font-bold text-navy underline hover:text-gold"
+            href="/polityka-prywatnosci"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            polityką prywatności
+          </a>{" "}
+          i przyjmuję do wiadomości zasady przetwarzania danych w celu obsługi zapytania.
         </span>
       </label>
       <FieldError id="privacyAccepted-error" errors={fieldErrors.privacyAccepted} />

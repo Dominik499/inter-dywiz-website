@@ -51,7 +51,9 @@ export default function PrivacyPolicyPage() {
             <p className="mt-2">
               Formularz może obejmować imię i nazwisko, numer telefonu lub adres e-mail, typ
               zlecenia, datę przejazdu, orientacyjną godzinę, miejsce odbioru, miejsce docelowe,
-              liczbę pasażerów oraz dodatkowe informacje przekazane przez użytkownika.
+              liczbę pasażerów, nazwę firmy lub innej organizacji, przewidywaną liczbę przejazdów,
+              obszar działania lub typowe trasy oraz dodatkowe informacje przekazane przez
+              użytkownika.
             </p>
             <p className="mt-2">
               Dane są przetwarzane w celu udzielenia odpowiedzi na zapytanie, przygotowania wyceny,
