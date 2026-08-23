@@ -175,7 +175,7 @@ export default function Home() {
             <div className="absolute -inset-4 rounded-[2.25rem] bg-gold/[0.08] blur-2xl" />
             <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.14] bg-white/[0.07] shadow-[0_36px_100px_rgba(0,0,0,0.36)] backdrop-blur-sm">
               <Image
-                src="/images/hero-pacifica-autumn.webp"
+                src="/images/hero-pacifica-wawel.webp"
                 alt="Transfery lotniskowe i transport grupowy w Krakowie – Inter-Dywiz"
                 width={1448}
                 height={1086}
