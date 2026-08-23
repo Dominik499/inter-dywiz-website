@@ -245,7 +245,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-sm border border-navy/10 bg-navy shadow-soft">
               <Image
                 src="/images/pacifica-modern-building.webp"
-                alt="Czarna Pacifica przy nowoczesnym budynku z górami w tle"
+                alt="Pacifica do transportu grupowego i transferów"
                 width={1536}
                 height={1024}
                 sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, calc(100vw - 40px)"
@@ -271,31 +271,18 @@ export default function Home() {
               vany i transport grupowy.
             </p>
           </div>
-          <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
+          <div className="mt-10">
             <figure className="overflow-hidden rounded-sm border border-navy/10 bg-white shadow-soft">
               <Image
-                src="/images/silver-taxis-inter-dywiz.webp"
-                alt="Srebrne samochody dostępne do obsługi przejazdów w Krakowie"
+                src="/images/ford-mondeo-wawel-autumn.webp"
+                alt="Samochody dostępne do obsługi transferów w Krakowie"
                 width={1448}
                 height={1086}
-                sizes="(min-width: 1280px) 832px, (min-width: 1024px) 66vw, calc(100vw - 40px)"
+                sizes="(min-width: 1280px) 1280px, calc(100vw - 40px)"
                 className="aspect-[16/10] h-auto w-full object-cover"
               />
               <figcaption className="px-5 py-4 text-sm font-bold text-navy">
                 Pojazdy dostępne w naszej sieci
-              </figcaption>
-            </figure>
-            <figure className="overflow-hidden rounded-sm border border-navy/10 bg-white shadow-soft">
-              <Image
-                src="/images/taxi-line-inter-dywiz.webp"
-                alt="Różne klasy pojazdów dostępne w sieci Inter-Dywiz"
-                width={1448}
-                height={1086}
-                sizes="(min-width: 1280px) 400px, (min-width: 1024px) 32vw, calc(100vw - 40px)"
-                className="aspect-[16/10] h-auto w-full object-cover"
-              />
-              <figcaption className="px-5 py-4 text-sm font-bold text-navy">
-                Dostęp do różnych klas pojazdów
               </figcaption>
             </figure>
           </div>
