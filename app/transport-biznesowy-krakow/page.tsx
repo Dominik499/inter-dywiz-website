@@ -31,11 +31,10 @@ export default function BusinessTransportPage() {
       title="Transport biznesowy w Krakowie"
       intro="Planujemy przejazdy na spotkania, konferencje i delegacje oraz transport gości biznesowych i VIP w Krakowie i Małopolsce."
       image={{
-        src: "/images/volkswagen-passat-business.webp",
-        alt: "Srebrny samochód klasy biznesowej",
-        width: 1200,
-        height: 1800,
-        objectPosition: "object-[center_62%]"
+        src: "/images/taxi-line-inter-dywiz.webp",
+        alt: "Pojazdy do obsługi transportu biznesowego w Krakowie",
+        width: 1448,
+        height: 1086
       }}
       descriptionTitle="Przejazdy zgodne z harmonogramem dnia"
       description={[

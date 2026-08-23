@@ -31,11 +31,10 @@ export default function TransportForCompaniesPage() {
       title="Transport dla firm w Krakowie"
       intro="Stała lub okazjonalna obsługa transportowa dla firm, hoteli, biur podróży i organizatorów wydarzeń — z jednym kontaktem operacyjnym."
       image={{
-        src: "/images/volkswagen-passat-business.webp",
-        alt: "Srebrny samochód klasy biznesowej",
-        width: 1200,
-        height: 1800,
-        objectPosition: "object-[center_62%]"
+        src: "/images/group-hotel-inter-dywiz.webp",
+        alt: "Obsługa grupy hotelowej przez Inter-Dywiz",
+        width: 1448,
+        height: 1086
       }}
       descriptionTitle="Przejrzysty sposób zlecania i koordynacji przejazdów"
       description={[

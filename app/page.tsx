@@ -170,10 +170,10 @@ export default function Home() {
           <div className="relative">
             <div className="overflow-hidden rounded-sm border border-white/[0.12] bg-white/[0.08] shadow-soft">
               <Image
-                src="/images/mercedes-e-class-hero.webp"
-                alt="Czarny samochód klasy biznesowej"
-                width={1800}
-                height={1268}
+                src="/images/hero-pacifica-autumn.webp"
+                alt="Transfery lotniskowe i transport grupowy w Krakowie – Inter-Dywiz"
+                width={1448}
+                height={1086}
                 priority
                 sizes="(min-width: 1280px) 576px, (min-width: 1024px) 46vw, calc(100vw - 40px)"
                 className="aspect-[1.42] h-full w-full object-cover"
@@ -224,20 +224,20 @@ export default function Home() {
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <div className="overflow-hidden rounded-sm border border-navy/10 bg-navy shadow-soft">
               <Image
-                src="/images/real-minivan-transfer.webp"
-                alt="Czarny minivan wykorzystywany do transportu grupowego"
-                width={1536}
-                height={1024}
+                src="/images/fleet-inter-dywiz-parking.webp"
+                alt="Pojazdy dostępne do obsługi transferów w Krakowie"
+                width={1448}
+                height={1086}
                 sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, calc(100vw - 40px)"
                 className="aspect-[16/10] h-full w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-sm border border-navy/10 bg-navy shadow-soft">
               <Image
-                src="/images/mercedes-v-class-interior.webp"
-                alt="Wnętrze vana klasy premium"
-                width={1800}
-                height={1200}
+                src="/images/silver-van-business.webp"
+                alt="Srebrny van z kierowcą do transportu grupowego i biznesowego"
+                width={1448}
+                height={1086}
                 sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, calc(100vw - 40px)"
                 className="aspect-[16/10] h-full w-full object-cover"
               />
@@ -264,10 +264,10 @@ export default function Home() {
           <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
             <figure className="overflow-hidden rounded-sm border border-navy/10 bg-white shadow-soft">
               <Image
-                src="/images/real-fleet-krakow.webp"
-                alt="Samochody dostępne do obsługi transferów i przejazdów w Krakowie"
-                width={1536}
-                height={1024}
+                src="/images/silver-taxis-inter-dywiz.webp"
+                alt="Srebrne samochody dostępne do obsługi przejazdów w Krakowie"
+                width={1448}
+                height={1086}
                 sizes="(min-width: 1280px) 832px, (min-width: 1024px) 66vw, calc(100vw - 40px)"
                 className="aspect-[16/10] h-auto w-full object-cover"
               />
@@ -277,15 +277,15 @@ export default function Home() {
             </figure>
             <figure className="overflow-hidden rounded-sm border border-navy/10 bg-white shadow-soft">
               <Image
-                src="/images/real-group-hotel-transfer.webp"
-                alt="Grupa podróżnych przed hotelem i vanem"
-                width={1536}
-                height={1024}
+                src="/images/taxi-line-inter-dywiz.webp"
+                alt="Różne klasy pojazdów dostępne w sieci Inter-Dywiz"
+                width={1448}
+                height={1086}
                 sizes="(min-width: 1280px) 400px, (min-width: 1024px) 32vw, calc(100vw - 40px)"
                 className="aspect-[16/10] h-auto w-full object-cover"
               />
               <figcaption className="px-5 py-4 text-sm font-bold text-navy">
-                Obsługa grup i transferów hotelowych
+                Dostęp do różnych klas pojazdów
               </figcaption>
             </figure>
           </div>
@@ -332,10 +332,10 @@ export default function Home() {
           <div className="space-y-6 text-base leading-8 text-white/[0.76]">
             <div className="overflow-hidden rounded-sm border border-white/[0.12] bg-white/[0.08] shadow-soft">
               <Image
-                src="/images/volkswagen-passat-business.webp"
-                alt="Srebrny samochód klasy biznesowej"
-                width={1200}
-                height={1800}
+                src="/images/group-hotel-inter-dywiz.webp"
+                alt="Obsługa grupy hotelowej przez Inter-Dywiz"
+                width={1448}
+                height={1086}
                 sizes="(min-width: 1280px) 672px, (min-width: 1024px) 53vw, calc(100vw - 40px)"
                 className="aspect-[16/9] h-full w-full object-cover object-[center_62%]"
               />
@@ -467,30 +467,6 @@ export default function Home() {
             >
               Polityka prywatności
             </a>
-            <p className="text-xs leading-5 text-white/50">
-              Zdjęcie hero:{" "}
-              <a
-                className="underline transition hover:text-gold"
-                href="https://commons.wikimedia.org/wiki/User:Damian_B_Oh"
-              >
-                Damian B Oh
-              </a>{" "}
-              /{" "}
-              <a
-                className="underline transition hover:text-gold"
-                href="https://commons.wikimedia.org/wiki/File:Mercedes-Benz_W213_FL_E_350_4matic_Obsidian_Black_Metallic_(2).jpg"
-              >
-                Wikimedia Commons
-              </a>
-              ,{" "}
-              <a
-                className="underline transition hover:text-gold"
-                href="https://creativecommons.org/licenses/by-sa/4.0/"
-              >
-                CC BY-SA 4.0
-              </a>
-              . Wykadrowano i przekonwertowano do WebP.
-            </p>
           </div>
         </div>
       </footer>

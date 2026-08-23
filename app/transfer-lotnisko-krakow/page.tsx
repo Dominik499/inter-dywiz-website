@@ -31,10 +31,10 @@ export default function AirportTransferPage() {
       title="Transfer lotniskowy Kraków-Balice"
       intro="Koordynujemy odbiór z godziną przylotu, monitorujemy lot i dobieramy pojazd do liczby pasażerów oraz bagażu."
       image={{
-        src: "/images/mercedes-v-class-exterior.webp",
-        alt: "Czarny van klasy premium do transferów grupowych",
-        width: 1800,
-        height: 1200
+        src: "/images/silver-taxis-inter-dywiz.webp",
+        alt: "Samochody do transferów lotniskowych w Krakowie",
+        width: 1448,
+        height: 1086
       }}
       descriptionTitle="Odbiór z lotniska dopasowany do przylotu"
       description={[
