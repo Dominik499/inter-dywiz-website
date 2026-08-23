@@ -53,9 +53,9 @@ const benefits = [
 ];
 
 const stats = [
-  ["100+", "pojazdów w dostępnej sieci"],
-  ["24/7", "dyspozycyjność operacyjna"],
-  ["7+1 / 8+1", "vany dla grup"]
+  ["100+", "dostępnych pojazdów"],
+  ["24/7", "dyspozycyjność"],
+  ["7+1 i 8+1", "vany dla grup"]
 ];
 
 function ArrowIcon() {
@@ -96,20 +96,22 @@ function CheckIcon() {
 export default function Home() {
   return (
     <main className="overflow-hidden bg-white">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/[0.88] backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-navy/[0.86] shadow-[0_10px_40px_rgba(0,0,0,0.12)] backdrop-blur-2xl">
+        <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
           <a href="#hero" className="group flex items-center gap-3" aria-label="Inter-Dywiz">
-            <span className="flex h-10 w-10 items-center justify-center rounded-sm border border-gold/60 bg-white text-sm font-black text-navy shadow-gold">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold/[0.55] bg-white text-sm font-black text-navy shadow-[0_10px_30px_rgba(200,164,93,0.24)] transition group-hover:border-gold">
               ID
             </span>
             <span className="leading-tight">
               <span className="block text-sm font-bold uppercase tracking-[0.18em] text-white">
                 Inter-Dywiz
               </span>
-              <span className="block text-xs text-white/[0.64]">Transport premium Kraków</span>
+              <span className="mt-0.5 block text-xs text-white/[0.62]">
+                Transport premium z Krakowa
+              </span>
             </span>
           </a>
-          <div className="hidden items-center gap-7 text-sm font-medium text-white/[0.78] md:flex">
+          <div className="hidden items-center gap-9 text-sm font-semibold text-white/[0.74] md:flex">
             <a className="transition hover:text-gold" href="#uslugi">
               Usługi
             </a>
@@ -122,53 +124,56 @@ export default function Home() {
           </div>
           <a
             href={phoneHref}
-            className="inline-flex h-11 items-center justify-center rounded-sm bg-gold px-4 text-sm font-bold text-navy shadow-gold transition hover:bg-champagne"
+            className="inline-flex h-11 items-center justify-center rounded-xl bg-gold px-5 text-sm font-extrabold text-navy shadow-[0_12px_34px_rgba(200,164,93,0.3)] transition hover:-translate-y-0.5 hover:bg-champagne"
           >
             Zadzwoń
           </a>
         </nav>
       </header>
 
-      <section id="hero" className="relative min-h-screen bg-navy pt-24 text-white">
-        <div className="absolute inset-0 premium-grid opacity-30" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(200,164,93,0.18),transparent_32%),linear-gradient(120deg,rgba(7,25,54,0.96),rgba(7,25,54,0.76)_48%,rgba(18,24,32,0.92))]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-10 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-20 lg:pt-20">
-          <div className="max-w-3xl">
-            <p className="mb-5 inline-flex rounded-sm border border-gold/[0.35] bg-white/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-gold">
+      <section id="hero" className="relative min-h-screen overflow-hidden bg-navy pt-24 text-white">
+        <div className="absolute inset-0 premium-grid opacity-20" />
+        <div className="absolute -right-32 top-12 h-[520px] w-[520px] rounded-full bg-gold/[0.12] blur-[130px]" />
+        <div className="absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-blue-400/[0.08] blur-[140px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(7,25,54,0.98),rgba(7,25,54,0.9)_48%,rgba(10,25,48,0.82))]" />
+        <div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-5 pb-16 pt-12 sm:px-6 sm:pt-16 lg:grid-cols-[0.94fr_1.06fr] lg:gap-16 lg:px-8 lg:pb-24 lg:pt-24">
+          <div className="max-w-3xl lg:py-4">
+            <p className="mb-6 inline-flex rounded-full border border-gold/[0.38] bg-white/[0.07] px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-gold shadow-[0_10px_34px_rgba(0,0,0,0.16)] backdrop-blur-sm sm:text-xs">
               Inter-Dywiz Sp. z o.o.
             </p>
-            <h1 className="text-balance text-4xl font-black leading-[1.06] text-white sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-[760px] text-balance text-4xl font-black leading-[1.04] tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.8rem] xl:text-[4.25rem]">
               Transfery lotniskowe i transport grupowy w Krakowie
             </h1>
-            <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/[0.78] sm:text-xl">
+            <p className="mt-7 max-w-2xl text-pretty text-base leading-8 text-white/[0.74] sm:text-lg xl:text-xl">
               Organizujemy pojedyncze przejazdy i wiele transferów jednocześnie — dla firm,
               hoteli, biur podróży, grup oraz klientów indywidualnych. Vany 7+1 i 8+1, transport
               biznesowy i kierowca do dyspozycji.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap xl:flex-nowrap">
               <a
                 href="#kontakt"
-                className="inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-gold px-6 text-base font-extrabold text-navy shadow-gold transition hover:bg-champagne"
+                className="inline-flex h-[54px] items-center justify-center gap-2 rounded-xl bg-gold px-6 text-base font-extrabold text-navy shadow-[0_16px_42px_rgba(200,164,93,0.28)] transition hover:-translate-y-0.5 hover:bg-champagne"
               >
                 Zapytaj o wycenę <ArrowIcon />
               </a>
               <a
                 href={phoneHref}
-                className="inline-flex h-[52px] items-center justify-center rounded-sm border border-white/[0.18] bg-white/10 px-6 text-base font-bold text-white transition hover:border-gold hover:text-gold"
+                className="inline-flex h-[54px] items-center justify-center rounded-xl border border-white/[0.16] bg-white/[0.08] px-6 text-base font-bold text-white shadow-[0_12px_34px_rgba(0,0,0,0.12)] backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-gold hover:text-gold"
               >
                 Zadzwoń: {phoneDisplay}
               </a>
               <a
                 href={whatsappHref}
-                className="inline-flex h-[52px] items-center justify-center rounded-sm border border-white/[0.18] px-6 text-base font-bold text-white transition hover:border-gold hover:text-gold"
+                className="inline-flex h-[54px] items-center justify-center rounded-xl border border-white/[0.16] bg-navy/[0.35] px-6 text-base font-bold text-white transition hover:-translate-y-0.5 hover:border-gold hover:text-gold"
               >
                 WhatsApp
               </a>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="overflow-hidden rounded-sm border border-white/[0.12] bg-white/[0.08] shadow-soft">
+          <div className="relative lg:pl-2">
+            <div className="absolute -inset-4 rounded-[2.25rem] bg-gold/[0.08] blur-2xl" />
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.14] bg-white/[0.07] shadow-[0_36px_100px_rgba(0,0,0,0.36)] backdrop-blur-sm">
               <Image
                 src="/images/hero-pacifica-autumn.webp"
                 alt="Transfery lotniskowe i transport grupowy w Krakowie – Inter-Dywiz"
@@ -176,18 +181,23 @@ export default function Home() {
                 height={1086}
                 priority
                 sizes="(min-width: 1280px) 576px, (min-width: 1024px) 46vw, calc(100vw - 40px)"
-                className="aspect-[1.42] h-full w-full object-cover"
+                className="aspect-[1.42] h-auto w-full object-cover object-center"
               />
-            </div>
-            <div className="grid grid-cols-3 border-x border-b border-white/[0.12] bg-white text-navy shadow-soft">
-              {stats.map(([value, label]) => (
-                <div key={value} className="border-r border-navy/10 p-4 last:border-r-0 sm:p-5">
-                  <p className="text-xl font-black text-navy sm:text-2xl">{value}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-graphite/[0.68]">
-                    {label}
-                  </p>
-                </div>
-              ))}
+              <div className="grid grid-cols-3 border-t border-white/[0.1] bg-white text-navy">
+                {stats.map(([value, label]) => (
+                  <div
+                    key={value}
+                    className="min-w-0 border-r border-navy/[0.1] px-3 py-4 text-center last:border-r-0 sm:px-5 sm:py-5 lg:text-left"
+                  >
+                    <p className="text-base font-black tracking-tight text-navy sm:text-2xl">
+                      {value}
+                    </p>
+                    <p className="mt-1 text-[9px] font-bold uppercase leading-4 tracking-[0.1em] text-graphite/[0.62] sm:text-[11px]">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
