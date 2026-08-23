@@ -9,27 +9,27 @@ const services = [
   {
     title: "Transfery lotniskowe",
     description:
-      "Punktualne odbiory z lotniska Kraków-Balice, koordynacja przylotów i komfortowy przejazd do hotelu, biura lub kolejnego miasta."
+      "Odbiór z lotniska Kraków-Balice z monitoringiem lotu i możliwością spotkania pasażera z tabliczką imienną. Koordynujemy godzinę odbioru z przylotem i dobieramy pojazd do liczby pasażerów oraz bagażu."
   },
   {
     title: "Transport biznesowy",
     description:
-      "Dyskretna obsługa spotkań, konferencji, delegacji i gości VIP z przejrzystą komunikacją oraz wysokim standardem pojazdów."
+      "Transport na spotkania, konferencje i delegacje oraz obsługa gości biznesowych i VIP. Ustalamy harmonogram, miejsca odbioru i sposób realizacji przejazdów."
   },
   {
     title: "Vany 7+1 i 8+1",
     description:
-      "Wygodne przewozy mniejszych grup, rodzin i zespołów z miejscem na bagaż oraz elastyczną organizacją kilku tras jednocześnie."
+      "Van z kierowcą w Krakowie dla grup, rodzin, zespołów i gości hotelowych. Dobieramy pojazd do liczby pasażerów, charakteru przejazdu i bagażu."
   },
   {
     title: "Kierowca do dyspozycji",
     description:
-      "Stała obsługa kierowcy na czas wydarzenia, dnia biznesowego lub pobytu grupy w Krakowie i Małopolsce."
+      "Samochód z kierowcą na ustalony czas — na dzień spotkań, wydarzenie, wizyty w kilku lokalizacjach lub pobyt grupy w Krakowie i Małopolsce."
   },
   {
     title: "Dla hoteli i biur podróży",
     description:
-      "Szybka rezerwacja, wsparcie operacyjne, jedna faktura oraz przewidywalny partner dla stałych zleceń i sezonowych wzrostów ruchu."
+      "Stała obsługa transferów dla hoteli, biur podróży i firm. Jeden kontakt operacyjny, koordynacja pojedynczych przejazdów i większych harmonogramów oraz możliwość zbiorczego rozliczenia."
   }
 ];
 
@@ -42,7 +42,7 @@ const benefits = [
 ];
 
 const stats = [
-  ["100+", "dostępnych pojazdów"],
+  ["100+", "pojazdów w dostępnej sieci"],
   ["24/7", "dyspozycyjność operacyjna"],
   ["7+1 / 8+1", "vany dla grup"]
 ];
@@ -103,7 +103,7 @@ export default function Home() {
               Usługi
             </a>
             <a className="transition hover:text-gold" href="#o-nas">
-              O nas
+              Współpraca
             </a>
             <a className="transition hover:text-gold" href="#kontakt">
               Kontakt
@@ -130,27 +130,28 @@ export default function Home() {
               Transfery lotniskowe i transport grupowy w Krakowie
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/[0.78] sm:text-xl">
-              Ponad 100 dostępnych pojazdów • Vany 7+1 i 8+1 • Obsługa biznesowa •
-              Dostępność 24/7
+              Organizujemy pojedyncze przejazdy i wiele transferów jednocześnie — dla firm,
+              hoteli, biur podróży, grup oraz klientów indywidualnych. Vany 7+1 i 8+1, transport
+              biznesowy i kierowca do dyspozycji.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                href={phoneHref}
+                href="#kontakt"
                 className="inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-gold px-6 text-base font-extrabold text-navy shadow-gold transition hover:bg-champagne"
               >
-                Zadzwoń <ArrowIcon />
+                Zapytaj o wycenę <ArrowIcon />
+              </a>
+              <a
+                href={phoneHref}
+                className="inline-flex h-[52px] items-center justify-center rounded-sm border border-white/[0.18] bg-white/10 px-6 text-base font-bold text-white transition hover:border-gold hover:text-gold"
+              >
+                Zadzwoń: {phoneDisplay}
               </a>
               <a
                 href={whatsappHref}
-                className="inline-flex h-[52px] items-center justify-center rounded-sm border border-white/[0.18] bg-white/10 px-6 text-base font-bold text-white transition hover:border-gold hover:text-gold"
-              >
-                WhatsApp
-              </a>
-              <a
-                href="#uslugi"
                 className="inline-flex h-[52px] items-center justify-center rounded-sm border border-white/[0.18] px-6 text-base font-bold text-white transition hover:border-gold hover:text-gold"
               >
-                Usługi
+                WhatsApp
               </a>
             </div>
           </div>
@@ -182,7 +183,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <p className="text-sm font-black uppercase tracking-[0.22em] text-gold">Usługi</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-navy sm:text-4xl">
-              Transport premium dla partnerów, firm i grup turystycznych
+              Transport dopasowany do trasy, liczby pasażerów i harmonogramu
             </h2>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
@@ -205,7 +206,7 @@ export default function Home() {
           <div>
             <p className="text-sm font-black uppercase tracking-[0.22em] text-gold">Korzyści</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-navy sm:text-4xl">
-              Operacyjna pewność przy jednym przejeździe i całym harmonogramie transferów
+              Od odbioru jednej osoby z lotniska po koordynację wielu pojazdów i grup
             </h2>
             <p className="mt-5 text-base leading-8 text-graphite/[0.78]">
               Wspieramy hotele, biura podróży i firmy w szybkiej organizacji transportu, także
@@ -232,22 +233,26 @@ export default function Home() {
       <section id="o-nas" className="bg-navy px-5 py-20 text-white sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="border-l-4 border-gold pl-6">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-gold">O nas</p>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-gold">Współpraca B2B</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-              Skala floty i specjalizacja w transporcie grupowym
+              Stała obsługa transportowa dla hoteli, firm i biur podróży
             </h2>
           </div>
-          <div className="space-y-5 text-base leading-8 text-white/[0.76]">
+          <div className="space-y-6 text-base leading-8 text-white/[0.76]">
             <p>
-              Inter-Dywiz Sp. z o.o. działa jako partner transportowy dla klientów, którzy oczekują
-              punktualności, elastycznej organizacji i reprezentacyjnego standardu obsługi w
-              Krakowie.
+              Ustalamy sposób zgłaszania przejazdów, osobę kontaktową i zasady rozliczeń.
+              Koordynujemy pojedyncze zlecenia oraz większe harmonogramy transferów.
             </p>
             <p>
-              Dostęp do ponad 100 pojazdów pozwala planować wiele transferów jednocześnie, a
-              doświadczenie w przewozie grup ułatwia obsługę hoteli, biur podróży, wydarzeń
-              biznesowych oraz wyjazdów z vanami 7+1 i 8+1.
+              Dostęp do sieci ponad 100 pojazdów pozwala obsługiwać wiele transferów i planować
+              zlecenia cykliczne z jednym kontaktem operacyjnym.
             </p>
+            <a
+              href="#kontakt"
+              className="inline-flex h-[52px] items-center justify-center gap-2 rounded-sm bg-gold px-6 text-base font-extrabold text-navy shadow-gold transition hover:bg-champagne"
+            >
+              Zapytaj o stałą współpracę <ArrowIcon />
+            </a>
           </div>
         </div>
       </section>
@@ -257,8 +262,12 @@ export default function Home() {
           <div>
             <p className="text-sm font-black uppercase tracking-[0.22em] text-gold">Kontakt</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-navy sm:text-4xl">
-              Zapytaj o transfer, flotę lub stałą współpracę
+              Otrzymaj wycenę przejazdu lub zapytaj o stałą współpracę
             </h2>
+            <p className="mt-5 text-base leading-8 text-graphite/[0.78]">
+              Podaj trasę, termin i liczbę pasażerów. Wrócimy z informacją o dostępności oraz
+              wyceną.
+            </p>
             <div className="mt-8 space-y-4">
               <a
                 href={phoneHref}

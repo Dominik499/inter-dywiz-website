@@ -52,16 +52,31 @@ function getClientAddress(request: NextRequest) {
   return request.headers.get("x-real-ip") ?? "unknown";
 }
 
-function createEmailText({ name, contact, service, message }: ContactFormInput) {
+function createEmailText({
+  name,
+  contact,
+  service,
+  travelDate,
+  travelTime,
+  pickupLocation,
+  destination,
+  passengerCount,
+  message
+}: ContactFormInput) {
   return [
     "Nowe zapytanie z formularza kontaktowego Inter-Dywiz.",
     "",
     `Imię i nazwisko: ${name}`,
-    `Kontakt: ${contact}`,
+    `Telefon lub e-mail: ${contact}`,
     `Typ zlecenia: ${service}`,
+    `Data przejazdu: ${travelDate}`,
+    `Orientacyjna godzina: ${travelTime || "Nie podano"}`,
+    `Miejsce odbioru: ${pickupLocation}`,
+    `Miejsce docelowe: ${destination}`,
+    `Liczba pasażerów: ${passengerCount}`,
     "",
-    "Wiadomość:",
-    message
+    "Dodatkowe informacje:",
+    message || "Nie podano"
   ].join("\n");
 }
 

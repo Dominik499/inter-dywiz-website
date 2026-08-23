@@ -13,6 +13,11 @@ type EditableFormData = {
   name: string;
   contact: string;
   service: (typeof contactServiceOptions)[number];
+  travelDate: string;
+  travelTime: string;
+  pickupLocation: string;
+  destination: string;
+  passengerCount: string;
   message: string;
   privacyAccepted: boolean;
 };
@@ -22,6 +27,11 @@ const initialFormData: EditableFormData = {
   name: "",
   contact: "",
   service: "Transfer lotniskowy",
+  travelDate: "",
+  travelTime: "",
+  pickupLocation: "",
+  destination: "",
+  passengerCount: "",
   message: "",
   privacyAccepted: false
 };
@@ -197,16 +207,104 @@ export default function ContactForm() {
         <FieldError id="service-error" errors={fieldErrors.service} />
       </label>
 
+      <div className="mt-5 grid gap-5 sm:grid-cols-2">
+        <label className="block">
+          <span className="text-sm font-bold text-navy">Data przejazdu</span>
+          <input
+            className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+            type="date"
+            name="travelDate"
+            value={formData.travelDate}
+            onChange={(event) => updateField("travelDate", event.target.value)}
+            required
+            disabled={isSubmitting}
+            aria-invalid={Boolean(fieldErrors.travelDate)}
+            aria-describedby={fieldErrors.travelDate ? "travelDate-error" : undefined}
+          />
+          <FieldError id="travelDate-error" errors={fieldErrors.travelDate} />
+        </label>
+        <label className="block">
+          <span className="text-sm font-bold text-navy">Orientacyjna godzina</span>
+          <input
+            className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+            type="time"
+            name="travelTime"
+            value={formData.travelTime}
+            onChange={(event) => updateField("travelTime", event.target.value)}
+            disabled={isSubmitting}
+            aria-invalid={Boolean(fieldErrors.travelTime)}
+            aria-describedby={fieldErrors.travelTime ? "travelTime-error" : undefined}
+          />
+          <FieldError id="travelTime-error" errors={fieldErrors.travelTime} />
+        </label>
+      </div>
+
+      <div className="mt-5 grid gap-5 sm:grid-cols-2">
+        <label className="block">
+          <span className="text-sm font-bold text-navy">Miejsce odbioru</span>
+          <input
+            className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+            type="text"
+            name="pickupLocation"
+            autoComplete="street-address"
+            value={formData.pickupLocation}
+            onChange={(event) => updateField("pickupLocation", event.target.value)}
+            minLength={2}
+            maxLength={200}
+            required
+            disabled={isSubmitting}
+            aria-invalid={Boolean(fieldErrors.pickupLocation)}
+            aria-describedby={fieldErrors.pickupLocation ? "pickupLocation-error" : undefined}
+          />
+          <FieldError id="pickupLocation-error" errors={fieldErrors.pickupLocation} />
+        </label>
+        <label className="block">
+          <span className="text-sm font-bold text-navy">Miejsce docelowe</span>
+          <input
+            className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+            type="text"
+            name="destination"
+            value={formData.destination}
+            onChange={(event) => updateField("destination", event.target.value)}
+            minLength={2}
+            maxLength={200}
+            required
+            disabled={isSubmitting}
+            aria-invalid={Boolean(fieldErrors.destination)}
+            aria-describedby={fieldErrors.destination ? "destination-error" : undefined}
+          />
+          <FieldError id="destination-error" errors={fieldErrors.destination} />
+        </label>
+      </div>
+
+      <label className="mt-5 block sm:max-w-[calc(50%_-_0.625rem)]">
+        <span className="text-sm font-bold text-navy">Liczba pasażerów</span>
+        <input
+          className="mt-2 h-12 w-full rounded-sm border border-navy/[0.12] bg-white px-4 text-navy outline-none transition focus:border-gold"
+          type="number"
+          name="passengerCount"
+          inputMode="numeric"
+          min={1}
+          max={200}
+          step={1}
+          value={formData.passengerCount}
+          onChange={(event) => updateField("passengerCount", event.target.value)}
+          required
+          disabled={isSubmitting}
+          aria-invalid={Boolean(fieldErrors.passengerCount)}
+          aria-describedby={fieldErrors.passengerCount ? "passengerCount-error" : undefined}
+        />
+        <FieldError id="passengerCount-error" errors={fieldErrors.passengerCount} />
+      </label>
+
       <label className="mt-5 block">
-        <span className="text-sm font-bold text-navy">Wiadomość</span>
+        <span className="text-sm font-bold text-navy">Dodatkowe informacje (opcjonalnie)</span>
         <textarea
           className="mt-2 min-h-36 w-full resize-y rounded-sm border border-navy/[0.12] bg-white px-4 py-3 text-navy outline-none transition focus:border-gold"
           name="message"
           value={formData.message}
           onChange={(event) => updateField("message", event.target.value)}
-          minLength={20}
           maxLength={2000}
-          required
           disabled={isSubmitting}
           aria-invalid={Boolean(fieldErrors.message)}
           aria-describedby={fieldErrors.message ? "message-error" : undefined}
@@ -260,7 +358,7 @@ export default function ContactForm() {
         className="mt-6 inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-sm bg-navy px-6 text-base font-extrabold text-white shadow-soft transition hover:bg-graphite disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Wysyłanie…" : "Wyślij zapytanie"} <ArrowIcon />
+        {isSubmitting ? "Wysyłanie…" : "Wyślij zapytanie o wycenę"} <ArrowIcon />
       </button>
       <p className="mt-4 text-xs leading-5 text-graphite/[0.64]">
         Odpowiemy na Twoje zapytanie tak szybko, jak to możliwe.
