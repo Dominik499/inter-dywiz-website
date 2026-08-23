@@ -31,10 +31,10 @@ export default function VanWithDriverPage() {
       title="Van z kierowcą w Krakowie"
       intro="Vany 7+1 i 8+1 dla grup, rodzin, zespołów i gości hotelowych — na transfer lotniskowy, wydarzenie lub przejazd biznesowy."
       image={{
-        src: "/images/silver-van-business.webp",
-        alt: "Srebrny van z kierowcą do transportu grupowego",
-        width: 1448,
-        height: 1086
+        src: "/images/pacifica-modern-building.webp",
+        alt: "Czarna Pacifica przy nowoczesnym budynku z górami w tle",
+        width: 1536,
+        height: 1024
       }}
       descriptionTitle="Jeden van lub kilka pojazdów dla grupy"
       description={[

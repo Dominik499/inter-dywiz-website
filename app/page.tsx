@@ -244,10 +244,10 @@ export default function Home() {
             </div>
             <div className="overflow-hidden rounded-sm border border-navy/10 bg-navy shadow-soft">
               <Image
-                src="/images/silver-van-business.webp"
-                alt="Srebrny van z kierowcą do transportu grupowego i biznesowego"
-                width={1448}
-                height={1086}
+                src="/images/pacifica-modern-building.webp"
+                alt="Czarna Pacifica przy nowoczesnym budynku z górami w tle"
+                width={1536}
+                height={1024}
                 sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, calc(100vw - 40px)"
                 className="aspect-[16/10] h-full w-full object-cover"
               />
