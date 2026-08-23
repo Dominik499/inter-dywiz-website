@@ -161,9 +161,9 @@ export default function Home() {
             <div className="overflow-hidden rounded-sm border border-white/[0.12] bg-white/[0.08] shadow-soft">
               <Image
                 src="/images/mercedes-e-class-hero.webp"
-                alt="Srebrny samochód klasy biznesowej"
+                alt="Czarny samochód klasy biznesowej"
                 width={1800}
-                height={1200}
+                height={1268}
                 priority
                 sizes="(min-width: 1280px) 576px, (min-width: 1024px) 46vw, calc(100vw - 40px)"
                 className="aspect-[1.42] h-full w-full object-cover"
@@ -368,6 +368,30 @@ export default function Home() {
             >
               Polityka prywatności
             </a>
+            <p className="text-xs leading-5 text-white/50">
+              Zdjęcie hero:{" "}
+              <a
+                className="underline transition hover:text-gold"
+                href="https://commons.wikimedia.org/wiki/User:Damian_B_Oh"
+              >
+                Damian B Oh
+              </a>{" "}
+              /{" "}
+              <a
+                className="underline transition hover:text-gold"
+                href="https://commons.wikimedia.org/wiki/File:Mercedes-Benz_W213_FL_E_350_4matic_Obsidian_Black_Metallic_(2).jpg"
+              >
+                Wikimedia Commons
+              </a>
+              ,{" "}
+              <a
+                className="underline transition hover:text-gold"
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+              >
+                CC BY-SA 4.0
+              </a>
+              . Wykadrowano i przekonwertowano do WebP.
+            </p>
           </div>
         </div>
       </footer>
