@@ -192,7 +192,7 @@ export default function Home() {
                     <p className="text-base font-black tracking-tight text-navy sm:text-2xl">
                       {value}
                     </p>
-                    <p className="mt-1 text-[9px] font-bold uppercase leading-4 tracking-[0.1em] text-graphite/[0.62] sm:text-[11px]">
+                    <p className="mt-1 text-[10px] font-bold uppercase leading-4 tracking-[0.08em] text-graphite/[0.62] sm:text-[11px] sm:tracking-[0.1em]">
                       {label}
                     </p>
                   </div>

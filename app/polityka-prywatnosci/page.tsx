@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   description: "Informacje o przetwarzaniu danych osobowych przez Inter-Dywiz Sp. z o.o.",
   alternates: {
     canonical: "/polityka-prywatnosci"
+  },
+  openGraph: {
+    title: "Polityka prywatności | Inter-Dywiz Sp. z o.o.",
+    description: "Informacje o przetwarzaniu danych osobowych przez Inter-Dywiz Sp. z o.o.",
+    url: "https://www.inter-dywiz.pl/polityka-prywatnosci"
+  },
+  twitter: {
+    card: "summary",
+    title: "Polityka prywatności | Inter-Dywiz Sp. z o.o.",
+    description: "Informacje o przetwarzaniu danych osobowych przez Inter-Dywiz Sp. z o.o."
   }
 };
 

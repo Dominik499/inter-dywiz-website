@@ -229,7 +229,9 @@ export default function ServiceLandingPage({
             <div>
               <h2 className="text-2xl font-black">Potrzebujesz wyceny lub stałej obsługi?</h2>
               <p className="mt-2 leading-7 text-white/[0.72]">
-                Podaj trasę, termin i liczbę pasażerów w formularzu kontaktowym.
+                {serviceParam === "b2b"
+                  ? "Opisz krótko potrzeby transportowe swojej firmy, hotelu lub biura podróży. Wrócimy z propozycją sposobu współpracy."
+                  : "Podaj trasę, termin i liczbę pasażerów w formularzu kontaktowym."}
               </p>
             </div>
             <a
