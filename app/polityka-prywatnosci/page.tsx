@@ -49,13 +49,24 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-black text-navy">2. Zakres i cel przetwarzania</h2>
             <p className="mt-2">
-              Formularz może obejmować imię i nazwisko, dane kontaktowe, typ zlecenia oraz treść
-              zapytania. Dane są przetwarzane wyłącznie w celu odpowiedzi na zapytanie i
-              przygotowania oferty.
+              Formularz może obejmować imię i nazwisko, numer telefonu lub adres e-mail, typ
+              zlecenia, datę przejazdu, orientacyjną godzinę, miejsce odbioru, miejsce docelowe,
+              liczbę pasażerów oraz dodatkowe informacje przekazane przez użytkownika.
             </p>
             <p className="mt-2">
-              Zgłoszenie jest przekazywane e-mailem na adres biuro@inter-dywiz.pl z użyciem
-              usługi Resend, która działa jako podmiot przetwarzający dane na rzecz administratora.
+              Dane są przetwarzane w celu udzielenia odpowiedzi na zapytanie, przygotowania wyceny,
+              ustalenia dostępności, organizacji i realizacji usługi oraz obsługi ewentualnej
+              współpracy B2B.
+            </p>
+            <p className="mt-2">
+              W związku z obsługą strony i formularza dane mogą być powierzane podmiotom
+              świadczącym usługi hostingowe, pocztowe i techniczne, w tym Vercel oraz Resend,
+              działającym jako podmioty przetwarzające dane na rzecz administratora. Zgłoszenie
+              jest przekazywane e-mailem na adres biuro@inter-dywiz.pl z użyciem usługi Resend.
+            </p>
+            <p className="mt-2">
+              Podanie danych jest dobrowolne, jednak dane oznaczone w formularzu jako wymagane są
+              niezbędne do obsługi zapytania, przygotowania wyceny i ustalenia dostępności.
             </p>
           </section>
 

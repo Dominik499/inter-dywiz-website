@@ -10,27 +10,37 @@ const services = [
   {
     title: "Transfery lotniskowe",
     description:
-      "Odbiór z lotniska Kraków-Balice z monitoringiem lotu i możliwością spotkania pasażera z tabliczką imienną. Koordynujemy godzinę odbioru z przylotem i dobieramy pojazd do liczby pasażerów oraz bagażu."
+      "Odbiór z lotniska Kraków-Balice z monitoringiem lotu i możliwością spotkania pasażera z tabliczką imienną. Koordynujemy godzinę odbioru z przylotem i dobieramy pojazd do liczby pasażerów oraz bagażu.",
+    href: "/transfer-lotnisko-krakow",
+    linkLabel: "Zobacz transfery lotniskowe"
   },
   {
     title: "Transport biznesowy",
     description:
-      "Transport na spotkania, konferencje i delegacje oraz obsługa gości biznesowych i VIP. Ustalamy harmonogram, miejsca odbioru i sposób realizacji przejazdów."
+      "Transport na spotkania, konferencje i delegacje oraz obsługa gości biznesowych i VIP. Ustalamy harmonogram, miejsca odbioru i sposób realizacji przejazdów.",
+    href: "/transport-biznesowy-krakow",
+    linkLabel: "Zobacz transport biznesowy"
   },
   {
     title: "Vany 7+1 i 8+1",
     description:
-      "Van z kierowcą w Krakowie dla grup, rodzin, zespołów i gości hotelowych. Dobieramy pojazd do liczby pasażerów, charakteru przejazdu i bagażu."
+      "Van z kierowcą w Krakowie dla grup, rodzin, zespołów i gości hotelowych. Dobieramy pojazd do liczby pasażerów, charakteru przejazdu i bagażu.",
+    href: "/van-z-kierowca-krakow",
+    linkLabel: "Zobacz vany z kierowcą"
   },
   {
     title: "Kierowca do dyspozycji",
     description:
-      "Samochód z kierowcą na ustalony czas — na dzień spotkań, wydarzenie, wizyty w kilku lokalizacjach lub pobyt grupy w Krakowie i Małopolsce."
+      "Samochód z kierowcą na ustalony czas — na dzień spotkań, wydarzenie, wizyty w kilku lokalizacjach lub pobyt grupy w Krakowie i Małopolsce.",
+    href: undefined,
+    linkLabel: undefined
   },
   {
     title: "Dla hoteli i biur podróży",
     description:
-      "Stała obsługa transferów dla hoteli, biur podróży i firm. Jeden kontakt operacyjny, koordynacja pojedynczych przejazdów i większych harmonogramów oraz możliwość zbiorczego rozliczenia."
+      "Stała obsługa transferów dla hoteli, biur podróży i firm. Jeden kontakt operacyjny, koordynacja pojedynczych przejazdów i większych harmonogramów oraz możliwość zbiorczego rozliczenia.",
+    href: "/transport-dla-firm",
+    linkLabel: "Zobacz ofertę dla firm"
   }
 ];
 
@@ -200,6 +210,14 @@ export default function Home() {
                 <span className="text-sm font-black text-gold">0{index + 1}</span>
                 <h3 className="mt-5 text-lg font-black leading-tight text-navy">{service.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-graphite/[0.78]">{service.description}</p>
+                {service.href && (
+                  <a
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-black text-navy underline decoration-gold/50 underline-offset-4 transition hover:text-gold"
+                    href={service.href}
+                  >
+                    {service.linkLabel} <ArrowIcon />
+                  </a>
+                )}
               </article>
             ))}
           </div>
@@ -328,7 +346,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-white/10 bg-navy px-5 py-12 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-gold">
               INTER-DYWIZ Sp. z o.o.
@@ -346,7 +364,25 @@ export default function Home() {
             <p>KRS: 0000496661</p>
           </div>
 
-          <div className="space-y-3 text-sm sm:col-span-2 lg:col-span-1">
+          <nav aria-label="Usługi" className="text-sm leading-7">
+            <p className="font-black uppercase tracking-[0.16em] text-gold">Usługi</p>
+            <div className="mt-3 flex flex-col items-start gap-1 text-white/70">
+              <a className="transition hover:text-gold" href="/transfer-lotnisko-krakow">
+                Transfer lotniskowy Kraków
+              </a>
+              <a className="transition hover:text-gold" href="/transport-biznesowy-krakow">
+                Transport biznesowy Kraków
+              </a>
+              <a className="transition hover:text-gold" href="/van-z-kierowca-krakow">
+                Van z kierowcą Kraków
+              </a>
+              <a className="transition hover:text-gold" href="/transport-dla-firm">
+                Transport dla firm
+              </a>
+            </div>
+          </nav>
+
+          <div className="space-y-3 text-sm">
             <p>
               <span className="block text-white/60">Telefon</span>
               <a className="font-bold text-white transition hover:text-gold" href={phoneHref}>
