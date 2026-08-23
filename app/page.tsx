@@ -224,10 +224,10 @@ export default function Home() {
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <div className="overflow-hidden rounded-sm border border-navy/10 bg-navy shadow-soft">
               <Image
-                src="/images/mercedes-v-class-exterior.webp"
-                alt="Czarny van klasy premium do transferów grupowych"
-                width={1800}
-                height={1200}
+                src="/images/real-minivan-transfer.webp"
+                alt="Czarny minivan wykorzystywany do transportu grupowego"
+                width={1536}
+                height={1024}
                 sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, calc(100vw - 40px)"
                 className="aspect-[16/10] h-full w-full object-cover"
               />
@@ -242,6 +242,52 @@ export default function Home() {
                 className="aspect-[16/10] h-full w-full object-cover"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-navy px-5 py-20 text-white sm:px-6 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-gold">
+              Realizacje i dostępne pojazdy
+            </p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              Realna dostępność. Różne klasy pojazdów.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/[0.76]">
+              Organizujemy zarówno pojedyncze przejazdy, jak i większe harmonogramy transportowe.
+              Korzystamy z dostępu do sieci pojazdów różnych klas — od samochodów osobowych po
+              vany i transport grupowy.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
+            <figure className="overflow-hidden rounded-sm border border-navy/10 bg-white shadow-soft">
+              <Image
+                src="/images/real-fleet-krakow.webp"
+                alt="Samochody dostępne do obsługi transferów i przejazdów w Krakowie"
+                width={1536}
+                height={1024}
+                sizes="(min-width: 1280px) 832px, (min-width: 1024px) 66vw, calc(100vw - 40px)"
+                className="aspect-[16/10] h-auto w-full object-cover"
+              />
+              <figcaption className="px-5 py-4 text-sm font-bold text-navy">
+                Pojazdy dostępne w naszej sieci
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-sm border border-navy/10 bg-white shadow-soft">
+              <Image
+                src="/images/real-group-hotel-transfer.webp"
+                alt="Grupa podróżnych przed hotelem i vanem"
+                width={1536}
+                height={1024}
+                sizes="(min-width: 1280px) 400px, (min-width: 1024px) 32vw, calc(100vw - 40px)"
+                className="aspect-[16/10] h-auto w-full object-cover"
+              />
+              <figcaption className="px-5 py-4 text-sm font-bold text-navy">
+                Obsługa grup i transferów hotelowych
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

@@ -9,3 +9,4 @@ dist
 .env.*.local
 work/
 *.tsbuildinfo
+public/images/source/
